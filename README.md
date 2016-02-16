@@ -56,3 +56,5 @@ Apenas um artigo mais completo traria aqui todos os atalhos dessa ferramenta IDE
 Tempo e treino são fatores importantes para memorizá-los e torná-los seus amigos, ao invés de considerá-los apenas mais algo a se aprender.
 
 No mais, espero que tenha atingido meu objetivo, incentivá-lo a usar mais atalhos, não só no Eclipse mas em outras IDEs também.
+
+Referencia: http://www.devmedia.com.br/principais-atalhos-do-eclipse/25614
