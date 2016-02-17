@@ -2,22 +2,18 @@
 
 Ver status da fila
 
-#mailq
-
-ou 
-
-#postqueue -p
+mailq ou postqueue -p
 
 =======================================================
 
 refresh da fila
 
-#postqueue -f
+postqueue -f
 
 ========================================================
 
 limpar mensagens da fila
 
-#postsuper -d ALL
+postsuper -d ALL
 
 ========================================================
