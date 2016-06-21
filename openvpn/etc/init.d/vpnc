@@ -1,0 +1,55 @@
+#!/bin/bash
+
+CONFIG="/etc/vpnc/client.ovpn"
+OPENVPN="/usr/sbin/openvpn"
+
+function getpid() {
+    pid=`/usr/bin/ps afx | grep /usr/sbin/openvpn | grep -v grep | awk '{print$1}'`
+}
+
+start(){
+    $OPENVPN --config $CONFIG >> /var/log/vpn/vpn.log 2>> /var/log/vpn/vpn.err &
+}
+
+status() {
+    getpid
+    if [[ $pid < 0 ]];then
+        echo Stopped
+    else
+        echo Started pid: $pid
+    fi
+}
+
+stop() {
+    getpid
+    if [[ $pid < 0 ]];then
+        echo Already stopped
+    else
+        kill $pid
+    fi
+}
+
+restart() {
+   stop
+   start
+}
+
+usage(){
+    echo "start|stop|status|restart"
+}
+
+case "$1" in
+  start)
+	start;;
+  stop)
+        stop;;
+  status)
+        status;;
+  restart)
+        restart;;
+   *)
+	usage;;
+esac
+
+exit 0
+
